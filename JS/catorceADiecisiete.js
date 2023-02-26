@@ -36,13 +36,34 @@ const parImpar = valor => {
     else
     console.log(`el numero ${valor} es impar`);
 };
-parImpar(-1);
+/* parImpar(-1);
 parImpar(1);
 parImpar(2);
 parImpar(16);
-parImpar("fd");
-//14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+parImpar("fd"); */
 
+//14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+const convertirFahrenheit = grados => {
+    if(validarNumero(grados)){
+        let calculo = (grados*(9/5))+32;
+        return console.log(`${grados} grados celsius son ${calculo} grados fahrenheit`);
+    }else
+        return console.log("el valor ingresado no es un numero");
+};
+const convertirCelsius = grados => {
+    if(validarNumero(grados)){
+        let calculo = (grados - 32) * 5/9;
+        return console.log(`${grados} grados fahrenheit son ${calculo} grados celsius`);
+    }else
+        return console.log("el valor ingresado no es un numero");
+};
+const validarNumero = valor => typeof valor === "number" ? true : false;
+
+convertirFahrenheit("sdf");
+convertirFahrenheit(0);
+convertirCelsius("ds");
+convertirCelsius(0);
+convertirCelsius(32);
 
 //15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
 
