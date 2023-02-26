@@ -12,7 +12,7 @@ const validarPrimo = (valor) => {
     if(!primo)
         console.log(`el numero ${valor} es primo`);
 };
-validarPrimo(1);
+/* validarPrimo(1);
 validarPrimo(2);
 validarPrimo(5);
 validarPrimo(-1);
@@ -22,12 +22,25 @@ validarPrimo("hola");
 validarPrimo(null);
 validarPrimo(undefined);
 validarPrimo({});
-validarPrimo([]);
+validarPrimo([]); */
 
 
 //13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
-
-
+const parImpar = valor => { 
+    if(typeof valor !== "number")
+        {return console.log(`el valor →${valor}← ingresado no es un numero`);}
+    if(valor===0)
+        {return console.log(`no se puede ingresar el numero 0`);}
+    if((Math.abs(valor) % 2)===0)
+        console.log(`el numero ${valor} es par`);
+    else
+    console.log(`el numero ${valor} es impar`);
+};
+parImpar(-1);
+parImpar(1);
+parImpar(2);
+parImpar(16);
+parImpar("fd");
 //14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 
 
