@@ -120,5 +120,4 @@ const calcularAnio = fecha => {
     }else
         console.log("No es una fecha valida");
 };
-calcularAnio(fechaIngresada);
-console.log(fechaIngresada instanceof Date);
+//calcularAnio(fechaIngresada);
