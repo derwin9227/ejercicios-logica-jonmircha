@@ -92,11 +92,17 @@ const conversionBaseNumeros = (tipo,valor) => {
     else
         console.log("Ingresaste un tipo no permitido para convertir");
 };
-conversionBaseNumeros("d",100);
+/* conversionBaseNumeros("d",100);
 conversionBaseNumeros("b",4);
-conversionBaseNumeros(3,4);
+conversionBaseNumeros(3,4); */
 
 //16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
-
+const montoNeto =(valor, descuento) => {
+    if(validarNumero(valor) && validarNumero(descuento))
+        console.log(`valor ${valor} tiene un descuento de ${Math.abs(descuento)}% y debes pagar → $${valor-(valor*(Math.abs(descuento)/100))}`);
+    else
+        console.log("ingresaste algun valor equivocado");
+};
+montoNeto(1000,"20");
 
 //17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
