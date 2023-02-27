@@ -37,18 +37,36 @@ evaluarNombre("hola mundo."); */
 
 //20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
 const validarEmail = email => ((/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email)));
-console.log(validarEmail(""));
+/* console.log(validarEmail(""));
 console.log(validarEmail(546));
 console.log(validarEmail({}));
 console.log(validarEmail([]));
 console.log(validarEmail(true));
 console.log(validarEmail(undefined));
 console.log(validarEmail());
-console.log(validarEmail("derw_-.5_64nh@gl.cv"));
+console.log(validarEmail("derw_-.5_64nh@gl.cv")); */
 
 //21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
-
-
+const validarNumeros = lista => {
+    const listaAlCuadrado =[];
+    lista.length === 0 ? lista=undefined : "";
+    if(typeof lista === "number") 
+        console.log("solo ingresaste 1 numero")
+    if(lista instanceof Array){
+        for(let item of lista) {
+            if(typeof item === "number")
+                listaAlCuadrado.push(item*item);
+            else
+                return console.log("algun valor no es valido");
+        }
+        console.log(listaAlCuadrado);
+    }else
+            console.log("no es una lista de numeros");
+};
+validarNumeros([1,4,5]);
+validarNumeros([]);
+validarNumeros([1,5,""]);
+validarNumeros([1,4,5]);
 
 //22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
 
