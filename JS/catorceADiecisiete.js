@@ -59,7 +59,7 @@ const convertirCelsius = grados => {
         return console.log("el valor ingresado no es un numero");
 };
 const validarNumero = valor => typeof valor === "number" ? true : false;
-const tipoConversion = (tipo, valor) => {
+const conversionGrados = (tipo, valor) => {
     if(tipo==="c")
         convertirCelsius(valor);
     else if(tipo==="f")
@@ -67,16 +67,34 @@ const tipoConversion = (tipo, valor) => {
     else
         console.log("ingrese →f← para fahrenheit o →c← para celsius");
 };
-tipoConversion("c",32);
-tipoConversion("f",0);
-/* convertirFahrenheit("sdf");
+/* conversionGrados("c",32);
+conversionGrados("f",0);
+convertirFahrenheit("sdf");
 convertirFahrenheit(0);
 convertirCelsius("ds");
 convertirCelsius(0);
 convertirCelsius(32); */
 
 //15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
-
+const binarioADecimal = (valor) => {
+    if(validarNumero(valor))
+        return console.log(`${valor} en binario es ${parseInt(valor, 2)} en decimal`);
+};
+const decimalABinario = (valor) => {
+    if(validarNumero(valor))
+        return console.log(`${valor} en decimal es ${valor.toString(2)} en binario`);
+};
+const conversionBaseNumeros = (tipo,valor) => {
+    if(tipo==="d" || tipo==="D")
+        binarioADecimal(valor);
+    else if (tipo==="B" || tipo==="b")
+        decimalABinario(valor);
+    else
+        console.log("Ingresaste un tipo no permitido para convertir");
+};
+conversionBaseNumeros("d",100);
+conversionBaseNumeros("b",4);
+conversionBaseNumeros(3,4);
 
 //16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
 
