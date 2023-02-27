@@ -17,13 +17,20 @@ const dividirLetras = texto => {
         console.log("cadena no valida");
 };
 const validarTexto = texto => (typeof texto === "string" && texto !== "");
-//dividirLetras("Hola Mundo");
-dividirLetras(20);
+/* dividirLetras(20);
 dividirLetras([]);
 dividirLetras("Hola Mundo");
-console.log(`la frase → ${frase.texto} ← tiene ${frase.vocales.length} vocales y ${frase.consonantes.length} consonantes`);
+console.log(`la frase → ${frase.texto} ← tiene ${frase.vocales.length} vocales y ${frase.consonantes.length} consonantes`); */
+
 
 //19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+const validarNombre = nombre => (typeof nombre === "string" && nombre !== "" && (/^[a-z\s]+$/ig.test(nombre)));
+const evaluarNombre = nombre => validarNombre(nombre) ? console.log(`→ ${nombre} ← es un nombre valido`) : console.log(`→ ${nombre} ← no es un nombre valido`);
+evaluarNombre("hola 5 veces");
+evaluarNombre("derwin hernandez");
+evaluarNombre("derwin");
+evaluarNombre("hola mundo.");
+
 //20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
 //21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
 //22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
