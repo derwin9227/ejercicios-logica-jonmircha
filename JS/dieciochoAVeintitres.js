@@ -63,12 +63,58 @@ const validarNumeros = lista => {
     }else
             console.log("no es una lista de numeros");
 };
-validarNumeros([1,4,5]);
+/* validarNumeros([1,4,5]);
 validarNumeros([]);
 validarNumeros([1,5,""]);
-validarNumeros([1,4,5]);
+validarNumeros([1,4,5]); */
 
 //22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
-
+const valorMaxMin = lista => {
+    let soloNumeros=true;
+    lista.length === 0 ? lista=undefined : "";
+    if(typeof lista === "number") 
+        console.log("solo ingresaste 1 numero")
+    if(lista instanceof Array){
+        for(let item of lista) {
+            if(typeof item !== "number")
+                soloNumeros=false;
+        }
+        soloNumeros ? console.log(`el valor mas alto es ${Math.max(...lista)} y el mas bajo es ${Math.min(...lista)} `) : "";
+    }else
+            console.log("no es una lista de numeros");
+};
+//valorMaxMin([1, 4, 5, 99, -60]);
 
 //23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+const paresImpares ={pares:[],impares:[]};
+const parImpar = valor => { 
+    if(typeof valor !== "number")
+        {return console.log(`el valor →${valor}← ingresado no es un numero`);}
+    if((Math.abs(valor) % 2)===0)
+        paresImpares.pares.push(valor);
+    else
+        paresImpares.impares.push(valor);
+};
+
+const dividirPares = lista => {
+    paresImpares.pares=[];
+    paresImpares.impares=[];
+    lista.length === 0 ? lista=undefined : "";
+    if(typeof lista === "number") 
+        console.log("solo ingresaste 1 numero")
+    if(lista instanceof Array){
+        for(let item of lista) {
+            if(typeof item !== "number")
+                return console.log("algun elemento no es un numero");
+            }
+        lista.forEach( el => {parImpar(el)
+            });
+        console.log(`pares → ${paresImpares.pares} ← e impares → ${paresImpares.impares} ←`);
+    }else
+            console.log("no es una lista de numeros");
+};
+dividirPares([1,2,3,4,5,6,7,8,9,0]);
+dividirPares([]);
+dividirPares("");
+dividirPares({});
+dividirPares([1,3,4,5]);
