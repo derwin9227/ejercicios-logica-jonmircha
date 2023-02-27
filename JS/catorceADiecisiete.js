@@ -103,6 +103,22 @@ const montoNeto =(valor, descuento) => {
     else
         console.log("ingresaste algun valor equivocado");
 };
-montoNeto(1000,"20");
+/* montoNeto(1000,"20"); */
 
-//17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+//17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 36 años (en 2020).
+let fechaIngresada = new Date(1984,4,23);
+let fechaActual = new Date();
+const validarFecha = fecha => (fecha instanceof Date) ? true : false;
+const calcularAnio = fecha => {
+    if(validarFecha(fechaIngresada)){
+        if(fecha.getFullYear() > fechaActual.getFullYear())
+            console.log("el año ingresado no puede ser mayor al actual");
+        if(fecha.getFullYear() < fechaActual.getFullYear())
+            console.log(`han pasado ${fechaActual.getFullYear() - fecha.getFullYear()} años`);
+        if(fecha.getFullYear() === fechaActual.getFullYear())
+            console.log("es el año actual");
+    }else
+        console.log("No es una fecha valida");
+};
+calcularAnio(fechaIngresada);
+console.log(fechaIngresada instanceof Date);
